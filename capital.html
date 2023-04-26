@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <script>
+            function reqListener() {
+                var countryData=JSON.parse(this.response);
+                countryData.forEach((element)=>{
+        console.log(element.name,element.capital,element.flag);
+    })}
+               
+
+
+const req = new XMLHttpRequest();
+req.addEventListener("load", reqListener);
+req.open("GET", "https://restcountries.com/v3.1/all");
+req.send();
+
+        </script>
+    </body>
+</html>
